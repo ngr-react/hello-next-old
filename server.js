@@ -11,15 +11,12 @@ app.prepare()
 
         server.get('/p/:id', (req, res) => {
             
-            console.log("+++++++++=", req.params)
-            
             const actualPage = '/post'
             const queryParams = { title: req.params.id } 
             app.render(req, res, actualPage, queryParams)
         })
 
         server.get('*', (req, res) => {
-            console.log("###########", req.params)
             return handle(req, res)
         })
 
